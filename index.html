@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>DevOps Days</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>DevOps Days</h1>
+					<h4>Gerenciando Ambientes com Puppet</h4>
+					<img src="img/oi-logo-j5.png" alt="logo-oi" width="20%">
+				</section>
+				<section>
+					<h1>Quem sou eu ?</h1>
+					<span style="display: inline-block;" class="fragment fade-up">Daniel Silva 'daniel.santos@oi.net.br'</span>
+					<br>
+					<span style="display: inline-block;" class="fragment fade-up">https://danielsilva.net.br</span>
+					<br>
+					<span style="display: inline-block;" class="fragment fade-up">Desenvolvedor Full Stack</span>
+					<br>
+					<span style="display: inline-block;" class="fragment fade-up">DevOps</span>
+					<br>
+					<span style="display: inline-block;" class="fragment fade-up">Java, PHP, Python e Ruby</span>
+					<br>
+					<span style="display: inline-block;" class="fragment fade-up">Workforce Click</span>
+				</section>
+				<section data-transition="slide" data-background="#006400" data-background-transition="zoom">
+					<section>
+						<h2>O Que é o Puppet ?</h2>
+						<img src="img/tenor.gif" alt="">
+					</section>
+					<section>
+						<p>
+							Puppet é uma ferramenta e plataforma que ajuda na gerência de configuração de servidores e serviços
+						</p>
+					</section>
+					<section>
+						<pre><code class="puppet" data-trim>
+							  
+						define nginx::vhost (
+							$port = '80',
+							$docroot = '/var/www',
+							$servername = $title,
+						){
+
+						file {'/etc/nginx/conf.d/teste.conf':
+							ensure  => file,
+							group   => 'root',
+							mode    => '0644',
+							content => epp('nginx/vhost.conf.epp', 
+							{ 'docroot' => $docroot, 'port'    => $port}),
+							}
+						}	
+						</code></pre>
+					</section>
+				</section>
+				<section data-transition="slide" data-background="#473C8B" data-background-transition="zoom">
+					<section>
+						<h2>Quais suas Caracteristicas ?</h2>
+					</section>
+					<section>
+						<p>
+							Linguagem de configuração declarativa. na qual você define as configurações desejada do sistema
+						</p>
+					</section>
+					<section>
+						<p>
+							Arquitetura cliente/servidor para distribuição de configuração
+						</p>
+					</section>
+					<section>
+						<p>
+							Simula as mudanças de configuração sem realizar modificações no host gerenciado.
+						</p>
+					</section>
+					<section>
+						<p>
+							Extensível por meio de módulos e plugins por conta do Ruby
+						</p>
+					</section>
+					<section>
+						<p>
+							Histórico a cada nova execução do agente puppet
+						</p>
+					</section>
+					<section>
+						<p>
+							Possui suporte aos principais Sistemas operacionais de mercado
+						</p>
+					</section>
+				</section>
+				<section data-transition="slide" data-background="#8B1A1A" data-background-transition="zoom">
+					<section>
+						<h2>Como o Puppet Funciona ?</h2>
+						<img src="img/giphy.gif" alt="">
+					</section>
+					<section>
+						<img src="img/arquitetura_puppet.jpg" alt="">
+					</section>
+				</section>
+				<section data-transition="slide" data-background="#4682B4" data-background-transition="zoom">
+					<section>
+						<h2>Componentes que englobam o Puppet</h2>
+					</section>
+					<section>
+						<h2>Puppet Server</h2>
+					</section>
+					<section>
+						<h2>Puppet DB</h2>
+					</section>
+					<section>
+						<h2>Puppet Board</h2>
+					</section>
+					<section>
+						<h2>Puppet Agent</h2>
+					</section>
+					<section>
+						<h2>Puppet Forge</h2>
+					</section>
+					<section>
+						<h2>Facter</h2>
+					</section>
+					<section>
+						<h2>Hiera</h2>
+					</section>
+				</section>
+				<section data-transition="slide" data-background="#8B8378" data-background-transition="zoom">
+					<h2>Hora de Praticar</h2>
+					<img src="img/SophisticatedDependableEasternglasslizard-size_restricted.gif" alt="">
+				</section>
+				<section data-transition="slide" data-background="#000000" data-background-transition="zoom">
+					<h2>FIM!</h2>
+					<img src="img/gordo20.gif" alt="">
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
