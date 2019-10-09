@@ -1,9 +1,9 @@
 {
-  "name": "reveal.js",
+  "name": "DevOps Days Oi 2019",
   "version": "3.8.0",
-  "description": "The HTML Presentation Framework",
-  "homepage": "http://revealjs.com",
-  "subdomain": "revealjs",
+  "description": "Apresentação para o DevOps Days",
+  "homepage": "https://danielsilva.net.br",
+  "subdomain": "danielsilva",
   "main": "js/reveal.js",
   "scripts": {
     "test": "grunt test",
@@ -11,9 +11,9 @@
     "build": "grunt"
   },
   "author": {
-    "name": "Hakim El Hattab",
-    "email": "hakim.elhattab@gmail.com",
-    "web": "http://hakim.se"
+    "name": "Daniel Silva",
+    "email": "silva20102@gmail.com",
+    "web": "https://danielsilva.net.br"
   },
   "repository": {
     "type": "git",
